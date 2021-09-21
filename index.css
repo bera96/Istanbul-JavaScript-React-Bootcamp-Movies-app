@@ -1,95 +1,189 @@
+/* global */
 *{
     padding: 0;
     margin: 0;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
-body{
+/* desktop */
+@media (min-width: 769px){
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        width: 60rem;
+        margin: 0 auto;
+        margin-top: 5rem;
+        margin-bottom: 15rem;
+    }
+    .movie-container{
+        width: 12rem;
+        height: auto;
+        margin-top: 1rem;
+        margin-left:  1.5rem;
+        margin-right: 1.5rem;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        
+    }
+    .movie-container a{
+        
+    }
+    .movie-img{
+        width: 12rem;
+        height: 12rem;
+        overflow: hidden;
+        
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        
+    }
+    .movie-flex{
+        display: flex;
+        align-items: center;
+        
+    }
+    .rating{
+        margin-left: auto;
+        border: 1px solid whitesmoke;
+        background-color: whitesmoke;
+        border-radius: 5px;
+        padding: 0.1rem 0.2rem;
+        text-align: center;
+    }
+    .movie-title{
+        font-weight: 600;
+        font-size:14px;
+    }
+    .release-date{
+        font-size: 14px;
+        color: gray;
+    }
+    .movie-container-bottom{
+        height: 6rem;
+        padding-top: 0.25rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        
+    }
+    .search-container{
+        width: 30rem;
+        
+        margin-left: auto;
+        margin-top: 10rem;
+        margin-right: auto;
+    
+    }
+    .movie-search{
+        border-radius: 1rem;
+        margin-left: 30rem;
+        padding-left: 1rem;
+        width: 13rem;
+        height: 2rem;
+        border: 1px solid gainsboro;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        
+    }
+    .movie-search::placeholder{
+        
+        color: rgba(149, 157, 165, 0.8);
+    }
+    .movie-search:focus{
+        outline: none;
+    }
+    
     
 }
-.container{
-    display: flex;
-    flex-wrap: wrap;
-    width: 60rem;
-    margin: 0 auto;
-    margin-top: 5rem;
-    margin-bottom: 15rem;
-}
-.movie-container{
-    width: 12rem;
-    height: auto;
-    margin-top: 1rem;
-    margin-left:  1.5rem;
-    margin-right: 1.5rem;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    border-top-left-radius: 2rem;
-    border-top-right-radius: 2rem;
-    border-bottom-left-radius: 2rem;
-    border-bottom-right-radius: 2rem;
+/* tablet */
+@media (min-width: 481px)and (max-width: 768px){
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        width: 30rem;
+        margin: 0 auto;
+        margin-top: 5rem;
+        margin-bottom: 15rem;
+    }
+    .movie-container{
+        width: 12rem;
+        height: auto;
+        margin-top: 1rem;
+        margin-left:  1.5rem;
+        margin-right: 1.5rem;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        
+    }
+    .movie-container a{
+        
+    }
+    .movie-img{
+        width: 12rem;
+        height: 12rem;
+        overflow: hidden;
+        
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        
+    }
+    .movie-flex{
+        display: flex;
+        align-items: center;
+        
+    }
+    .rating{
+        margin-left: auto;
+        border: 1px solid whitesmoke;
+        background-color: whitesmoke;
+        border-radius: 5px;
+        padding: 0.1rem 0.2rem;
+        text-align: center;
+    }
+    .movie-title{
+        font-weight: 600;
+        font-size:14px;
+    }
+    .release-date{
+        font-size: 14px;
+        color: gray;
+    }
+    .movie-container-bottom{
+        height: 6rem;
+        padding-top: 0.25rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        
+    }
+    .search-container{
+        width: 20rem;
+        
+        margin-left: auto;
+        margin-top: 10rem;
+        margin-right: auto;
+    
+    }
+    .movie-search{
+        border-radius: 1rem;
+        margin-left: 11rem;
+        padding-left: 1rem;
+        width: 13rem;
+        height: 2rem;
+        border: 1px solid gainsboro;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        
+    }
+    .movie-search::placeholder{
+        
+        color: rgba(149, 157, 165, 0.8);
+    }
+    .movie-search:focus{
+        outline: none;
+    }
+    
     
 }
-.movie-container a{
-    
-}
-.movie-img{
-    width: 12rem;
-    height: 12rem;
-    overflow: hidden;
-    
-    border-top-left-radius: 2rem;
-    border-top-right-radius: 2rem;
-    
-}
-.movie-flex{
-    display: flex;
-    align-items: center;
-    
-}
-.rating{
-    margin-left: auto;
-    border: 1px solid whitesmoke;
-    background-color: whitesmoke;
-    border-radius: 5px;
-    padding: 0.1rem 0.2rem;
-    text-align: center;
-}
-.movie-title{
-    font-weight: 600;
-    font-size:14px;
-}
-.release-date{
-    font-size: 14px;
-    color: gray;
-}
-.movie-container-bottom{
-    height: 6rem;
-    padding-top: 0.25rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    
-}
-.search-container{
-    width: 30rem;
-    
-    margin-left: auto;
-    margin-top: 10rem;
-    margin-right: auto;
-
-}
-.movie-search{
-    border-radius: 1rem;
-    margin-left: 30rem;
-    padding-left: 1rem;
-    width: 13rem;
-    height: 2rem;
-    border: 1px solid gainsboro;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    
-}
-.movie-search::placeholder{
-    
-    color: rgba(149, 157, 165, 0.8);
-}
-.movie-search:focus{
-    outline: none;
-}
-
