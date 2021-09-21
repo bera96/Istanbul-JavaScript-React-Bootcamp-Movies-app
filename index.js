@@ -6,6 +6,28 @@ api_url="https://api.themoviedb.org/3/discover/movie?api_key=2f16f7c77222b1bb8ce
 const container=document.querySelector(".container")
 const IMAGE_URL="https://image.tmdb.org/t/p/w500"
 
+const searchBar=document.querySelector(".movie-search")
+
+let moviesList=[]
+
+searchBar.addEventListener("keyup",(e)=>{
+
+    const searchValue=e.target.value
+    console.log(searchValue)
+    
+    const filteredMovies=moviesList.results.filter((titles)=>{
+        
+        return(
+            
+            titles.title.includes(searchValue)
+            
+        )
+    })
+
+
+    displayMovies(filteredMovies)
+
+})
 
 
 
@@ -16,7 +38,7 @@ const IMAGE_URL="https://image.tmdb.org/t/p/w500"
 const loadMovies = async ()=>{
     
     const res = await fetch(api_url)
-    let moviesList= await res.json()
+    moviesList= await res.json()
     displayMovies(moviesList.results)
     
 }
@@ -24,7 +46,7 @@ const loadMovies = async ()=>{
 // getting all the values and returning as HTML 
 
 const displayMovies =  (movies)=>{
-   
+
     const htmlString = movies
     .map((movie)=>{
 
@@ -33,16 +55,16 @@ const displayMovies =  (movies)=>{
         
         
         return `<div class="movie-container">
-                   <a href="${IMAGE_URL+movie.poster_path}"><img class="movie-img" src="${IMAGE_URL+movie.poster_path}"></a> 
-                   <div class="movie-container-bottom">
-                   <div class="movie-flex">
-                     <h2 class="movie-title">${movie.title}</h2>
-                     <div class="rating">
+                    <a href="${IMAGE_URL+movie.poster_path}"><img class="movie-img" src="${IMAGE_URL+movie.poster_path}"></a> 
+                    <div class="movie-container-bottom">
+                    <div class="movie-flex">
+                        <h2 class="movie-title">${movie.title}</h2>
+                        <div class="rating">
                         <span class="movie-vote">${movie.vote_average}</span>
-                     </div>
-                   </div>
+                        </div>
+                    </div>
                     <p class="release-date">${releaseDate}</p>
-                   </div>
+                    </div>
                 </div>`
 })
 .join("")   // This join for get rid of commas
