@@ -12,14 +12,14 @@ let moviesList=[]
 
 searchBar.addEventListener("keyup",(e)=>{
 
-    const searchValue=e.target.value
+    const searchValue=e.target.value.toLowerCase()
     
-    
+    console.log(searchValue)
     const filteredMovies=moviesList.results.filter((titles)=>{
         
         return(
             
-            titles.title.includes(searchValue)
+            titles.title.toLowerCase().includes(searchValue)
             
         )
     })
