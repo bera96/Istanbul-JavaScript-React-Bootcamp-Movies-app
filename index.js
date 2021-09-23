@@ -1,10 +1,14 @@
 
 // Api url
 
-api_url="https://api.themoviedb.org/3/discover/movie?api_key=2f16f7c77222b1bb8ce2253e8999bf77&sort_by=popularity.desc"
+const BASE_URL="https://api.themoviedb.org/3/discover/movie?"
+const API_KEY="api_key=2f16f7c77222b1bb8ce2253e8999bf77"
+const api_url=BASE_URL+API_KEY+"&sort_by=popularity.desc"
+
+const IMAGE_URL="https://image.tmdb.org/t/p/w500"
 
 const container=document.querySelector(".container")
-const IMAGE_URL="https://image.tmdb.org/t/p/w500"
+
 
 const searchBar=document.querySelector(".movie-search")
 
@@ -14,7 +18,7 @@ searchBar.addEventListener("keyup",(e)=>{
 
     const searchValue=e.target.value.toLowerCase()
     
-    console.log(searchValue)
+    
     const filteredMovies=moviesList.results.filter((titles)=>{
         
         return(
@@ -40,6 +44,7 @@ const loadMovies = async ()=>{
     const res = await fetch(api_url)
     moviesList= await res.json()
     displayMovies(moviesList.results)
+    console.log(moviesList)
     
 }
 
